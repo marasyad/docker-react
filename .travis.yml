@@ -1,0 +1,10 @@
+language : generic
+sudo : require 
+sevices :
+  - docker
+
+befora_install:
+  - docker build -f Dockerfile.dev -t test/docker-react .
+
+script :
+  - docker run -e CI=true USERNAME/docker-react npm run test
