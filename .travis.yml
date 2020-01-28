@@ -7,4 +7,4 @@ befora_install:
   - docker build -f Dockerfile.dev -t test/docker-react .
 
 script :
-  - docker run -e CI=true USERNAME/docker-react npm run test
+  - docker run -e CI=true rasyad/docker-react npm run test
