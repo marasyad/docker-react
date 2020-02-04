@@ -8,3 +8,15 @@ befora_install:
 
 script :
   - docker run -e CI=true test/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-application"
+  env: "DockerApplication-env"
+  bucket_name: "elasticbeanstalk-us-east-2-586928785119"
+  bucker_path: "docker-application"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
