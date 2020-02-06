@@ -1,7 +1,7 @@
 #as builder indentifying the phase as builder
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package.json .
+COPY package.json ./
 RUN npm install 
 COPY . .
 #making build version of the app to be deployed in the production
