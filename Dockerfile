@@ -9,5 +9,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 # --from copying file from another phase, the destination /usr/share/nginx/html is directory of static program that will be deployed by nginx
 COPY --from=builder /app/build /usr/share/nginx/html  
